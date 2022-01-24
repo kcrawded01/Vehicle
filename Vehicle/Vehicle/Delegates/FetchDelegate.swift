@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol OwnerFetcherDelegate : AnyObject {
-    func showError()
-    func updateList()
+protocol FetchDelegate : AnyObject {
+    func fetchFailed()
+    func updateSucceeded()
 }

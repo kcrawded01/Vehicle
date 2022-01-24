@@ -14,16 +14,17 @@ class UserCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func setupData(_ name: String, _ imageUrl: String) {
-        userNameLabel.text = name
+    func setupName(_ name: String) {
+        userNameLabel.text = name.capitalized
+    }
+    
+    func setupProfile(_ image: UIImage) {
+        userImage.image = image
     }
 }

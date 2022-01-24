@@ -13,15 +13,20 @@ class ImageLoader {
     
     init() { }
     
-    func loadImage(_ url: NSString, completion: @escaping (UIImage) -> Void) {
-        if let cachedImage = cache.object(forKey:url) {
+    func loadImage(_ url: String?, completion: @escaping (UIImage) -> Void) {
+        if (url == nil || url!.isEmpty) {
+            return;
+        }
+        
+        if let cachedImage = cache.object(forKey:(url! as NSString)) {
             completion(cachedImage)
         }else{
-            URLSession.shared.dataTask(with: URL(string: url as String)!) { data, response, error in
+            let urlStr = url!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            URLSession.shared.dataTask(with: URL(string: urlStr as String)!) { data, response, error in
                 DispatchQueue.main.async {
                     if (error == nil && data != nil) {
                         let image = UIImage(data: data!)!
-                        self.cache.setObject(image, forKey: url)
+                        self.cache.setObject(image, forKey: url! as NSString)
                         completion(image)
                     }
                 }

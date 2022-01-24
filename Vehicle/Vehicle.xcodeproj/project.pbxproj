@@ -29,7 +29,6 @@
 		BEBEFCEB27978A8800E0A892 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFCE927978A8800E0A892 /* UserCell.swift */; };
 		BEBEFCEC27978A8800E0A892 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBEFCEA27978A8800E0A892 /* UserCell.xib */; };
 		BEBEFCEE27978F9B00E0A892 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFCED27978F9B00E0A892 /* ImageLoader.swift */; };
-		BEBEFCF0279796BC00E0A892 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFCEF279796BC00E0A892 /* Vehicle.swift */; };
 		BEBEFCF2279805DE00E0A892 /* CLLocationCoordinate2D+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFCF1279805DE00E0A892 /* CLLocationCoordinate2D+Address.swift */; };
 		BEBEFCF52798068500E0A892 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFCF42798068500E0A892 /* Pin.swift */; };
 		BEBEFCF72798072800E0A892 /* PinInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFCF62798072800E0A892 /* PinInfo.swift */; };
@@ -40,9 +39,15 @@
 		BEBEFD0F2798B32600E0A892 /* OwnerVechicleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD0E2798B32600E0A892 /* OwnerVechicleDTO.swift */; };
 		BEBEFD112798D98100E0A892 /* OwnerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD102798D98100E0A892 /* OwnerFetcher.swift */; };
 		BEBEFD132798DA4900E0A892 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD122798DA4900E0A892 /* NetworkManager.swift */; };
-		BEBEFD172798DF5100E0A892 /* OwnerFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD162798DF5100E0A892 /* OwnerFetcherDelegate.swift */; };
+		BEBEFD172798DF5100E0A892 /* FetchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD162798DF5100E0A892 /* FetchDelegate.swift */; };
 		BEBEFD192798E6C900E0A892 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD182798E6C900E0A892 /* LocationTracker.swift */; };
 		BEBEFD1D2798EAFD00E0A892 /* VehicleLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEFD1C2798EAFC00E0A892 /* VehicleLocationDTO.swift */; };
+		BECDADA8279DF69400C98DFA /* SmartCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDADA7279DF69400C98DFA /* SmartCache.swift */; };
+		BECDADAC279E1D9900C98DFA /* Vehicles+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDADAB279E1D9900C98DFA /* Vehicles+Location.swift */; };
+		BECDADB0279E49C700C98DFA /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDADAF279E49C700C98DFA /* Owner.swift */; };
+		BECDADB2279E49FF00C98DFA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDADB1279E49FF00C98DFA /* Vehicle.swift */; };
+		BECDADB6279E4C3F00C98DFA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDADB5279E4C3F00C98DFA /* Database.swift */; };
+		BECDADB8279E55D400C98DFA /* Owner+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDADB7279E55D400C98DFA /* Owner+Formatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +94,6 @@
 		BEBEFCE927978A8800E0A892 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		BEBEFCEA27978A8800E0A892 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		BEBEFCED27978F9B00E0A892 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		BEBEFCEF279796BC00E0A892 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		BEBEFCF1279805DE00E0A892 /* CLLocationCoordinate2D+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Address.swift"; sourceTree = "<group>"; };
 		BEBEFCF42798068500E0A892 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		BEBEFCF62798072800E0A892 /* PinInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInfo.swift; sourceTree = "<group>"; };
@@ -100,9 +104,15 @@
 		BEBEFD0E2798B32600E0A892 /* OwnerVechicleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerVechicleDTO.swift; sourceTree = "<group>"; };
 		BEBEFD102798D98100E0A892 /* OwnerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerFetcher.swift; sourceTree = "<group>"; };
 		BEBEFD122798DA4900E0A892 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		BEBEFD162798DF5100E0A892 /* OwnerFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerFetcherDelegate.swift; sourceTree = "<group>"; };
+		BEBEFD162798DF5100E0A892 /* FetchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDelegate.swift; sourceTree = "<group>"; };
 		BEBEFD182798E6C900E0A892 /* LocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTracker.swift; sourceTree = "<group>"; };
 		BEBEFD1C2798EAFC00E0A892 /* VehicleLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleLocationDTO.swift; sourceTree = "<group>"; };
+		BECDADA7279DF69400C98DFA /* SmartCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCache.swift; sourceTree = "<group>"; };
+		BECDADAB279E1D9900C98DFA /* Vehicles+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicles+Location.swift"; sourceTree = "<group>"; };
+		BECDADAF279E49C700C98DFA /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		BECDADB1279E49FF00C98DFA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		BECDADB5279E4C3F00C98DFA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		BECDADB7279E55D400C98DFA /* Owner+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner+Formatting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,9 +204,9 @@
 			children = (
 				BEBEFD0327984CD100E0A892 /* Base */,
 				BEBEFD0427984CE000E0A892 /* LoadingIndicators */,
+				BEBEFD0227984CB600E0A892 /* MapAnnotation */,
 				BEBEFCE927978A8800E0A892 /* UserCell.swift */,
 				BEBEFCEA27978A8800E0A892 /* UserCell.xib */,
-				BEBEFD0227984CB600E0A892 /* MapAnnotation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				BEBEFCD927977A8F00E0A892 /* ReloadDelegate.swift */,
-				BEBEFD162798DF5100E0A892 /* OwnerFetcherDelegate.swift */,
+				BEBEFD162798DF5100E0A892 /* FetchDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -216,6 +226,8 @@
 				BEBEFCF1279805DE00E0A892 /* CLLocationCoordinate2D+Address.swift */,
 				BEBEFCFA2798160500E0A892 /* UIColor+Hex.swift */,
 				BEBEFCFC27983F0700E0A892 /* String+Hex.swift */,
+				BECDADAB279E1D9900C98DFA /* Vehicles+Location.swift */,
+				BECDADB7279E55D400C98DFA /* Owner+Formatting.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,15 +265,42 @@
 		BEBEFD0527984DA200E0A892 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BEBEFCEF279796BC00E0A892 /* Vehicle.swift */,
+				BECDADB9279E7ADD00C98DFA /* DTO */,
+				BECDADBA279E7B3500C98DFA /* Entities */,
+				BECDADBB279E7B5000C98DFA /* Storage */,
 				BEBEFCED27978F9B00E0A892 /* ImageLoader.swift */,
-				BEBEFD0E2798B32600E0A892 /* OwnerVechicleDTO.swift */,
-				BEBEFD1C2798EAFC00E0A892 /* VehicleLocationDTO.swift */,
 				BEBEFD102798D98100E0A892 /* OwnerFetcher.swift */,
 				BEBEFD122798DA4900E0A892 /* NetworkManager.swift */,
 				BEBEFD182798E6C900E0A892 /* LocationTracker.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BECDADB9279E7ADD00C98DFA /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				BEBEFD0E2798B32600E0A892 /* OwnerVechicleDTO.swift */,
+				BEBEFD1C2798EAFC00E0A892 /* VehicleLocationDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		BECDADBA279E7B3500C98DFA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BECDADAF279E49C700C98DFA /* Owner.swift */,
+				BECDADB1279E49FF00C98DFA /* Vehicle.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BECDADBB279E7B5000C98DFA /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				BECDADA7279DF69400C98DFA /* SmartCache.swift */,
+				BECDADB5279E4C3F00C98DFA /* Database.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,12 +444,13 @@
 				BEBEFCF2279805DE00E0A892 /* CLLocationCoordinate2D+Address.swift in Sources */,
 				BEBEFCD8279775E500E0A892 /* ErrorView.swift in Sources */,
 				BEBEFCA727976D5700E0A892 /* Vehicle.xcdatamodeld in Sources */,
-				BEBEFCF0279796BC00E0A892 /* Vehicle.swift in Sources */,
 				BEBEFCA127976D5700E0A892 /* LoadingViewController.swift in Sources */,
+				BECDADB8279E55D400C98DFA /* Owner+Formatting.swift in Sources */,
 				BEBEFCDA27977A8F00E0A892 /* ReloadDelegate.swift in Sources */,
 				BEBEFD112798D98100E0A892 /* OwnerFetcher.swift in Sources */,
-				BEBEFD172798DF5100E0A892 /* OwnerFetcherDelegate.swift in Sources */,
+				BEBEFD172798DF5100E0A892 /* FetchDelegate.swift in Sources */,
 				BEBEFC9D27976D5700E0A892 /* AppDelegate.swift in Sources */,
+				BECDADB0279E49C700C98DFA /* Owner.swift in Sources */,
 				BEBEFD132798DA4900E0A892 /* NetworkManager.swift in Sources */,
 				BEBEFC9F27976D5700E0A892 /* SceneDelegate.swift in Sources */,
 				BEBEFCEB27978A8800E0A892 /* UserCell.swift in Sources */,
@@ -420,10 +460,14 @@
 				BEBEFCE62797828400E0A892 /* VehicleInfoViewController.swift in Sources */,
 				BEBEFD0127984A0F00E0A892 /* PinProfileImage.swift in Sources */,
 				BEBEFCDC27977C0800E0A892 /* BaseView.swift in Sources */,
+				BECDADB2279E49FF00C98DFA /* Vehicle.swift in Sources */,
 				BEBEFCDE27977CE500E0A892 /* LoadingView.swift in Sources */,
+				BECDADAC279E1D9900C98DFA /* Vehicles+Location.swift in Sources */,
 				BEBEFCEE27978F9B00E0A892 /* ImageLoader.swift in Sources */,
 				BEBEFCFF2798481900E0A892 /* ColorCircle.swift in Sources */,
 				BEBEFCFB2798160500E0A892 /* UIColor+Hex.swift in Sources */,
+				BECDADA8279DF69400C98DFA /* SmartCache.swift in Sources */,
+				BECDADB6279E4C3F00C98DFA /* Database.swift in Sources */,
 				BEBEFCFD27983F0700E0A892 /* String+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

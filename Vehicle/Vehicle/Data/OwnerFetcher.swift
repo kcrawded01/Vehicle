@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 class OwnerFetcher {
-    weak var delegate: OwnerFetcherDelegate?
+    weak var delegate: FetchDelegate?
     
     func fetchData() {
         NetworkManager().retrieveData(url: Defines.listURL) { failed, data in
@@ -21,7 +22,7 @@ class OwnerFetcher {
     }
     
     func dataLoadingFailed() {
-        delegate?.showError()
+        delegate?.fetchFailed()
     }
     
     func decodeData(_ data: Data?) {
@@ -30,9 +31,11 @@ class OwnerFetcher {
             let ownerVehicle = try decoder.decode([String:[User]].self, from: data!)
             let users = ownerVehicle["data"] ?? []
             for user in users {
-                self.saveData(user)
+                DispatchQueue.main.async {
+                    self.saveData(user)
+                }
             }
-            delegate?.updateList()
+            delegate?.updateSucceeded()
             
         } catch {
             print("Error info: \(error)")
@@ -40,7 +43,12 @@ class OwnerFetcher {
         }
     }
     
-    func saveData(_ user: User) {
-        
+    func saveData( _ user: User) {
+        if (user.owner != nil && user.userid != nil) {
+            Database.shared.saveOwner(with: user.userid!, user.owner!)
+            if (user.vehicles != nil) {
+                Database.shared.saveVehicles(user.userid!, user.vehicles!)
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ class PinProfileImage: UIImageView {
         self.frame.size = CGSize(width: imgWidthHeight, height: imgWidthHeight)
         self.contentMode = .scaleAspectFit
     }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

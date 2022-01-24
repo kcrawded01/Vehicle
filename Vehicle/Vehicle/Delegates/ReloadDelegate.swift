@@ -6,5 +6,6 @@
 //
 
 protocol ReloadDelegate: AnyObject {
+    func showList()
     func reloadData()
 }

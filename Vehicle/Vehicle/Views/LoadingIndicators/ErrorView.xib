@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="BA3-dp-bij"/>
                 <outlet property="reloadButton" destination="FrW-bA-gMo" id="DPo-mp-3Jo"/>
+                <outlet property="showListButton" destination="bpx-Qb-a13" id="bMt-FC-fUJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,35 +26,65 @@
                     <color key="textColor" systemColor="systemPinkColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrW-bA-gMo">
-                    <rect key="frame" x="173" y="53" width="68.5" height="31"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aBt-EC-uru">
+                    <rect key="frame" x="20" y="53" width="374" height="31"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrW-bA-gMo">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="6PL-Y8-d9O"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Reload"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.BorderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="reloadPressed:" destination="-1" eventType="touchUpInside" id="SoK-l8-Ylf"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-Qb-a13">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="nSb-Sj-Khh"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Show old list"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.BorderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="reloadPressed:" destination="-1" eventType="touchUpInside" id="ato-UK-Lmm"/>
+                                <action selector="showListPressed:" destination="-1" eventType="touchUpInside" id="YtU-qN-G6H"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31" id="6PL-Y8-d9O"/>
+                        <constraint firstAttribute="height" constant="31" id="aK9-NP-QJ0"/>
                     </constraints>
-                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Reload"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                            <integer key="value" value="4"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.BorderWidth">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="reloadPressed:" destination="-1" eventType="touchUpInside" id="SoK-l8-Ylf"/>
-                    </connections>
-                </button>
+                </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="aBt-EC-uru" secondAttribute="bottom" id="4iy-RQ-VNQ"/>
                 <constraint firstItem="YoF-lg-Ymw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DXG-99-BQy"/>
-                <constraint firstItem="FrW-bA-gMo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KF1-c9-cQt"/>
                 <constraint firstItem="YoF-lg-Ymw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fCv-Sw-aAp"/>
                 <constraint firstItem="YoF-lg-Ymw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gOs-do-k4U"/>
                 <constraint firstAttribute="trailing" secondItem="YoF-lg-Ymw" secondAttribute="trailing" id="h7A-ts-M1Q"/>
-                <constraint firstAttribute="bottom" secondItem="FrW-bA-gMo" secondAttribute="bottom" id="mvn-9n-Cl6"/>
+                <constraint firstAttribute="trailing" secondItem="aBt-EC-uru" secondAttribute="trailing" constant="20" id="hHv-j4-jpa"/>
+                <constraint firstItem="aBt-EC-uru" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="qIs-cM-V4n"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="138.75" y="113.02816901408451"/>

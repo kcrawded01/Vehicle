@@ -11,6 +11,7 @@ class ErrorView: BaseView {
 
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var showListButton: UIButton!
     
     weak var delegate: ReloadDelegate?
     
@@ -27,6 +28,14 @@ class ErrorView: BaseView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         reloadButton.layer.borderColor = UIColor.systemBlue.cgColor
+    }
+    
+    func hideListButton(_ hide: Bool) {
+        showListButton.isHidden = hide
+    }
+    
+    @IBAction func showListPressed(_ sender: Any) {
+        delegate?.showList()
     }
     
     @IBAction func reloadPressed(_ sender: Any) {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController, ReloadDelegate, OwnerFetcherDelegate  {
+class LoadingViewController: UIViewController, ReloadDelegate, FetchDelegate  {
 
     @IBOutlet weak var errorView: ErrorView!
     @IBOutlet weak var loadingVew: LoadingView!
@@ -17,14 +17,9 @@ class LoadingViewController: UIViewController, ReloadDelegate, OwnerFetcherDeleg
         errorView.delegate = self
         fetchData()
     }
-
+    
     func openList() {
         performSegue(withIdentifier: "openListId", sender: nil)
-    }
-    
-    func reloadData() {
-        hideError(true)
-        fetchData()
     }
     
     func fetchData() {
@@ -36,21 +31,37 @@ class LoadingViewController: UIViewController, ReloadDelegate, OwnerFetcherDeleg
     func hideError(_ hide: Bool) {
         showLoading(hide)
         errorView.isHidden = !loadingVew.isHidden
+        errorView.hideListButton(noData)
     }
     
     func showLoading(_ hide: Bool) {
         loadingVew.isHidden = !hide
     }
     
-    func showError() {
+    var noData: Bool {
+        Database.shared.findOwners().count == 0
+    }
+    
+    //MARK: FetchDelegate
+    func fetchFailed() {
         DispatchQueue.main.async {
             self.hideError(false)
         }
     }
     
-    func updateList() {
+    func updateSucceeded() {
         DispatchQueue.main.async {
             self.openList()
         }
+    }
+    
+    //MARK: ReloadDelegate
+    func reloadData() {
+        hideError(true)
+        fetchData()
+    }
+    
+    func showList() {
+        openList()
     }
 }

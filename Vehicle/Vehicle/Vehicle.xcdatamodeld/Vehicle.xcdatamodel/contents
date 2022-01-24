@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Owner" representedClassName="Owner" syncable="YES" codeGenerationType="class">
+    <entity name="Owner" representedClassName=".Owner" syncable="YES" codeGenerationType="category">
         <attribute name="foto" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="surname" optional="YES" attributeType="String"/>
         <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="vehicle_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicle1" inverseName="owner_" inverseEntity="Vehicle1"/>
+        <relationship name="vehicle_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="owner_" inverseEntity="Vehicle"/>
     </entity>
-    <entity name="Vehicle1" representedClassName="Vehicle1" syncable="YES" codeGenerationType="class">
+    <entity name="Vehicle" representedClassName=".Vehicle" syncable="YES" codeGenerationType="category">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="foto" optional="YES" attributeType="String"/>
         <attribute name="make" optional="YES" attributeType="String"/>
         <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
         <attribute name="vehicleId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="vin" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="String"/>
         <relationship name="owner_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="vehicle_" inverseEntity="Owner"/>
     </entity>
     <elements>
-        <element name="Owner" positionX="-285.1539916992188" positionY="12.8836669921875" width="128" height="118"/>
-        <element name="Vehicle1" positionX="-54" positionY="18" width="128" height="163"/>
+        <element name="Owner" positionX="-474.9507446289063" positionY="16.4541015625" width="128" height="118"/>
+        <element name="Vehicle" positionX="-123.0810546875" positionY="-100.4541931152344" width="128" height="178"/>
     </elements>
 </model>
